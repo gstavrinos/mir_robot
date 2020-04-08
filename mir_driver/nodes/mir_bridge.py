@@ -181,7 +181,8 @@ PUB_TOPICS = [
 #              TopicConfig('move_base_node/mir_escape_recovery/visualization_marker', Marker),
 #              TopicConfig('move_base_node/parameter_descriptions', ConfigDescription),
 #              TopicConfig('move_base_node/parameter_updates', Config),
-              TopicConfig('odom_comb', Odometry),    # odom_comb on real robot, odom on simulator
+              #  TopicConfig('odom_comb', Odometry),    # odom_comb on real robot, odom on simulator
+              TopicConfig('odom', Odometry),    # odom_comb on real robot, odom on simulator
               TopicConfig('odom_enc', Odometry),
               TopicConfig('particlecloud', PoseArray),
               TopicConfig('relative_move_action/feedback', RelativeMoveActionFeedback),
