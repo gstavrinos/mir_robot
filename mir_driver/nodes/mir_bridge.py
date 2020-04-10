@@ -21,7 +21,7 @@ from sdc21x0.msg import MotorCurrents
 from sensor_msgs.msg import Imu, LaserScan, PointCloud2, Range, Image, CompressedImage, CameraInfo
 from std_msgs.msg import Float64, String
 from tf.msg import tfMessage
-from tf2_msgs import TFMessage
+from tf2_msgs.msg import TFMessage
 from visualization_msgs.msg import Marker, MarkerArray
 
 tf_prefix = ''
