@@ -19,9 +19,9 @@
   <!-- remove those TFs that are also published by the MiR to avoid conflicts -->
   <node name="tf_remove_state_publisher_frames" pkg="mir_driver" type="tf_remove_child_frames.py" output="screen">
     <remap from="tf_in"         to="tf_rss" />
-    <remap from="tf_out"        to="/tf" />
+    <remap from="tf_out"        to="/tfout" />
     <remap from="tf_static_in"  to="tf_static_rss" />
-    <remap from="tf_static_out" to="/tf_static" />
+    <remap from="tf_static_out" to="/tf_staticout" />
     <rosparam param="remove_frames">
       - base_link
       - front_laser_link
@@ -49,7 +49,7 @@
     <!-- remove the map -> odom_comb (or map -> odom) TF transform -->
     <node name="tf_remove_mir_map_frame" pkg="mir_driver" type="tf_remove_child_frames.py" output="screen">
       <remap from="tf_in"         to="tf_mir" />
-      <remap from="tf_out"        to="/tf" />
+      <remap from="tf_out"        to="/tfout" />
       <rosparam param="remove_frames">
         - odom_comb     # on MiR software 1.9, the frame is called odom_comb
         - odom          # on MiR software 2.0, the frame is called odom
@@ -64,7 +64,8 @@
       <remap from="map_metadata" to="/map_metadata" />
       <remap from="rosout" to="/rosout" />
       <remap from="rosout_agg" to="/rosout_agg" />
-      <remap from="tf" to="/tf" />
+      <remap from="tf" to="/tfout" />
+      <remap from="tf_static" to="/tf_staticout" />
     </node>
   </group>
 
